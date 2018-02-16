@@ -1,19 +1,31 @@
 import React from 'react'
 
-const Masthead = () =>
+const Masthead = ({title, subtitle, author, created, imageUrl}) => {
+  const style = {
+    backgroundImage : `url(${imageUrl})`,
 
-<header class="masthead" >
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="site-heading">
-          <h1>Clean Blog</h1>
-          <span class="subheading">A Blog Theme by Start Bootstrap</span>
+  }
+  return (
+    <header className="masthead" style={style}>
+      <div className="overlay"></div>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8 col-md-10 mx-auto">
+            <div className="post-heading">
+              <h1>{title}</h1>
+              <h2 className="subheading">{subtitle.substring(1, 100)}</h2>
+              { author != undefined ?
+                <span className="meta">Posted by
+                  <a href="#"> {author} </a>
+                  {created}</span>
+                : ''
+              }
+
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</header>
-
+    </header>
+  )
+}
 export default Masthead;

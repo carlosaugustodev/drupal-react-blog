@@ -3,51 +3,23 @@ import gql from 'graphql-tag';
 import React from 'react';
 import AticleItem from './AticleItem'
 
-
-const articleQuery = gql`
-  query articleQuery {
-    nodeQuery {
-      entities {
-        entityId,
-        entityLabel,
-        ... on NodeArticle {
-          body {
-            summary
-          },
-        },
-        entityOwner {
-          entityLabel
-        },
-        entityCreated
-
-      }
-    }
-  }
-`;
-
-const ArticleList = ({ data }) => {
-  console.log(data)
-  if (data.loading) {
-    return (<div>Loading</div>)
-  }
-
+const ArticleList = ({ articles, loading }) => {
 
   return (
-    <div class="container">
+    <div className="container">
 
-
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+      <div className="row">
+        <div className="col-lg-8 col-md-10 mx-auto">
           {
-            data.nodeQuery.entities.map((article, k) => {
+            articles.map((article, k) => {
                 return (
-                  <AticleItem article={article}></AticleItem>
+                  <AticleItem article={article} key={k}></AticleItem>
                 )
             })
           }
 
-          <div class="clearfix">
-            <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+          <div className="clearfix">
+            <a className="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
           </div>
         </div>
       </div>
@@ -55,8 +27,4 @@ const ArticleList = ({ data }) => {
   )
 }
 
-
-
-
-const ArticlesContainer = graphql(articleQuery);
-export default ArticlesContainer(ArticleList)
+export default ArticleList

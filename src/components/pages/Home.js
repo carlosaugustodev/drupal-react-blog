@@ -1,12 +1,23 @@
 import React from 'react';
 import Masthead from '../ui/Masthead'
 import ArticleList from '../ui/ArticleList'
+import { ArticlesHomeList } from '../queries/ArticlesQueries.js'
 
-const Home = () =>
+const Home = ({data}) => {
 
-<div>
-  <Masthead></Masthead>
-  <ArticleList></ArticleList>
-</div>
+  return (
+    <div>
+      <Masthead title={'Home'} subtitle="Subtitle Home" imageUrl="/img/home-bg.jpg"/>
 
-export default Home;
+      { !data.loading ?
+          <ArticleList articles={data.nodeQuery.entities} ></ArticleList>
+          : <div>Loading</div>
+      }
+
+    </div>
+  )
+}
+
+
+
+export default ArticlesHomeList(Home);

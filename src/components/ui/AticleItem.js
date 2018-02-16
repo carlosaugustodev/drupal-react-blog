@@ -4,16 +4,17 @@ const AticleItem = ({ article }) => {
 
     return (
       <div>
-        <div class="post-preview">
+        <div className="post-preview">
           <a href={"post/" + article.entityId}>
-            <h2 class="post-title">
+            <h2 className="post-title">
               {article.entityLabel}
             </h2>
-            <h3 class="post-subtitle">
-              {article.body.summary.substring(1, 100)}
+            <h3 className="post-subtitle">
+              {console.log(article.body)}
+              { (article.body) && (article.body.summary) ? article.body.summary.substring(1, 100) : ''}
             </h3>
           </a>
-          <p class="post-meta">Posted by
+          <p className="post-meta">Posted by
             <a href="#"> {article.entityOwner.entityLabel} </a>
             on {article.entityCreated}</p>
         </div>

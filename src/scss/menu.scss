@@ -1,0 +1,44 @@
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (min-width: 767px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "medium" {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "large" {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    background-color: transparent;
+    border: none;
+
+    a {
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+}
+
+#mainNav .navbar-nav>li.nav-item {
+
+  a {
+    color: rgba(0,0,0,.5);
+
+    @include breakpoint('medium') {
+      color: #FFF;
+    }
+  }
+}

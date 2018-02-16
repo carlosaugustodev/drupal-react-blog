@@ -3,17 +3,17 @@ import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import Masthead from '../ui/Masthead'
 import ArticleBody from '../ui/ArticleBody'
-import { SingleArticle } from '../queries/ArticlesQueries.js'
+import { landingPageByPath } from '../queries/ArticlesQueries.js'
 
 
 
-const Article = ( data ) => {
-
-  if (data.data.loading) {
+const LandingPages = ( {data} ) => {
+  console.log(data);
+  if (data.loading) {
     return (<div>Loading</div>)
   }
 
-  const article = data.data.nodeById;
+  const article = data.route.nodeContext;
 
   return (
 
@@ -21,10 +21,10 @@ const Article = ( data ) => {
 
       <Masthead
         title={article.entityLabel}
-        subtitle={(article.body) && (article.body.summary) ? article.body.summary : ''}
+        subtitle={(article.body) ? article.body.summary : ''}
         author={article.entityOwner.entityLabel}
         created={article.entityCreated}
-        imageUrl={(article.fieldImage) ? article.fieldImage.url : ''} />
+        imageUrl={article.fieldImage.url} />
       <ArticleBody article={article}/>
 
     </div>
@@ -32,4 +32,4 @@ const Article = ( data ) => {
   )
 }
 
-export default SingleArticle(Article);
+export default landingPageByPath(LandingPages);
