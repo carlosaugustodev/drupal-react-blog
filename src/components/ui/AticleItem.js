@@ -10,7 +10,6 @@ const AticleItem = ({ article }) => {
               {article.entityLabel}
             </h2>
             <h3 className="post-subtitle">
-              {console.log(article.body)}
               { (article.body) && (article.body.summary) ? article.body.summary.substring(1, 100) : ''}
             </h3>
           </a>

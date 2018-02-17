@@ -13,6 +13,10 @@ import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import "../scss/menu.css"
 
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import reducer from "./reducers/reducers.js"
+
 const httpLink = new HttpLink({ uri: 'http://decoup2.dd:8083/graphql' })
 
 const client = new ApolloClient({
@@ -20,27 +24,30 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
+let store = createStore(reducer)
+
 class App extends Component {
 
-
-
   render() {
+
+
     return (
       <div className="App">
+        <Provider store={store}>
+          <ApolloProvider client={client}>
 
-        <ApolloProvider client={client}>
+            <div>
+              <Header></Header>
 
-          <div>
-            <Header></Header>
-
-            <Router history={browserHistory}>
-              <Route path='/' component={Home}/>
-              <Route path='/about' component={About}/>
-              <Route path='/post/:postId' component={Article}/>
-              <Route path='/pages/:alias' component={LandingPages}/>
-            </Router>
-          </div>
-        </ApolloProvider>
+              <Router history={browserHistory}>
+                <Route path='/' component={Home}/>
+                <Route path='/about' component={About}/>
+                <Route path='/post/:postId' component={Article}/>
+                <Route path='/pages/:alias' component={LandingPages}/>
+              </Router>
+            </div>
+          </ApolloProvider>
+        </Provider>
         <hr></hr>
         <Footer></Footer>
 

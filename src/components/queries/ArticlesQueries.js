@@ -2,8 +2,9 @@ import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 
 const articleQuery = gql`
-  query articleQuery {
-    nodeQuery(
+  query articleQuery($limit: Int!) {
+    nodeQuery (
+      limit: $limit,
       filter:{
          conjunction: AND
           conditions: [{
@@ -29,7 +30,27 @@ const articleQuery = gql`
     }
   }
 `;
-const ArticlesHomeList = graphql(articleQuery);
+// const articlesHomeList = function(component) {
+//   return graphql(articleQuery,{
+//     options: (props) => (
+//       console.log(props),
+//       {
+//       variables: {
+//         limit: 20
+//       }
+//     })
+//   })(component)
+// };
+const articlesHomeList = graphql(articleQuery,{
+  options: (props) => (
+    console.log(props),
+    {
+    variables: {
+      limit: 20
+    }
+  })
+});
+
 
 /**
 */
@@ -95,7 +116,8 @@ const landingPageByPath = graphql(landingPageByPathQuery, {
 });
 
 export {
-  ArticlesHomeList,
+  articleQuery,
+  articlesHomeList,
   SingleArticle,
   landingPageByPath
 }
