@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 import React from 'react';
 import AticleItem from './AticleItem'
 
-const ArticleList = ({ articles,loadMoreFunction}) => {
+const ArticleList = ({ articles,loadMoreFunction, showLoadMore}) => {
 
   return (
     <div className="container">
@@ -13,7 +13,6 @@ const ArticleList = ({ articles,loadMoreFunction}) => {
           {
 
             articles.map((article, k) => {
-
                 return (
                   <AticleItem article={article} key={k}></AticleItem>
                 )
@@ -21,7 +20,8 @@ const ArticleList = ({ articles,loadMoreFunction}) => {
           }
 
           <div className="clearfix">
-            <a className="btn btn-primary float-right" onClick={() => loadMoreFunction()}>Older Posts &rarr;</a>
+            { showLoadMore ? <a className="btn btn-primary float-right" onClick={() => loadMoreFunction()}>Older Posts &rarr;</a> : '' }
+
           </div>
         </div>
       </div>

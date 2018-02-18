@@ -1,13 +1,8 @@
 import React from 'react';
 import Masthead from '../ui/Masthead'
 import ArticleList from '../ui/ArticleList'
-import { articlesHomeList } from '../queries/ArticlesQueries.js'
 import { connect } from 'react-redux';
-import { fetchHomeArticle } from '../actions/actions'
-
-
-const getHomeArticles = () => {
-}
+import { fetchHomeArticle } from '../actions/ArticlesActions'
 
 class Home extends React.Component {
   constructor(props) {
@@ -37,7 +32,7 @@ class Home extends React.Component {
         <Masthead title={'Home'} subtitle="Subtitle Home" imageUrl="/img/home-bg.jpg"/>
 
         { !data.loading ?
-            <ArticleList articles={data} loadMoreFunction={this.loadMoreHandle} ></ArticleList>
+            <ArticleList articles={data} loadMoreFunction={this.loadMoreHandle} showLoadMore={this.props.showLoadMore} ></ArticleList>
             : <div>Loading</div>
         }
 
@@ -47,13 +42,13 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state);
+
   return ({
-    articles : state.articlesReducers.articles,
-    page: state.articlesReducers.page
+    articles : state.ArticleReducers.articles,
+    page: state.ArticleReducers.page,
+    showLoadMore: state.ArticleReducers.showLoadMore
   })
 };
 
 
 export default connect(mapStateToProps)(Home);
-// export default articlesHomeList(Home);

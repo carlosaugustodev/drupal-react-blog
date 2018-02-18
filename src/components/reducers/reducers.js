@@ -1,26 +1,8 @@
 import { combineReducers } from 'redux'
-
-const articlesReducers = (state = [], action) => {
-
-  switch (action.type) {
-
-    case 'HOME_ARTICLES':
-      return {
-        articles: action.articles,
-        page: action.page
-      }
-
-      // {
-      //   articles: action.articles,
-      //   page: action.page
-      // }
-    default:
-      return state
-  }
-}
+import ArticleReducers from './ArticleReducers'
 
 const reducer = combineReducers({
-  articlesReducers
+  ArticleReducers
 })
 
 export default reducer

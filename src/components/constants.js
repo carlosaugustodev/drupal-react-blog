@@ -1,0 +1,1 @@
+export const HOME_ARTICLES_ACTION = 'HOME_ARTICLES';
