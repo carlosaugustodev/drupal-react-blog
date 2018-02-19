@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AticleItem = ({ article }) => {
+const ArticleItem = ({ article }) => {
 
     return (
       <div>
@@ -21,4 +21,5 @@ const AticleItem = ({ article }) => {
       </div>
     )
 }
-export default AticleItem;
+
+export default ArticleItem;

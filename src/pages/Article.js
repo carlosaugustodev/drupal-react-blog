@@ -1,20 +1,12 @@
 import React from 'react';
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
 import Masthead from '../ui/Masthead'
 import ArticleBody from '../ui/ArticleBody'
-import Loading from '../ui/Loading'
-import { fetchSingleArticle } from '../actions/ArticlesActions'
+import { fetchSingleArticle } from '../actions/articlesActions'
 import { connect } from 'react-redux';
-import Home from './Home'
-
-
 
 class Article extends React.Component {
 
-
   componentDidMount() {
-
     const { dispatch } = this.props
     const id = this.props.params.postId
     fetchSingleArticle(dispatch, id)
@@ -28,14 +20,10 @@ class Article extends React.Component {
     }
 
     return (
-
       <div>
-
         <Masthead {...this.props.articleMastahed} />
         <ArticleBody article={article}/>
-
       </div>
-
     )
   }
 }
@@ -43,6 +31,7 @@ class Article extends React.Component {
 const mapStateToProps = (state) => {
 
   const article = (state.ArticleReducers.article) ? state.ArticleReducers.article : {};
+
   return ({
     article : state.ArticleReducers.article,
     articleMastahed : {

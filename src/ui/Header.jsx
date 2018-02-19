@@ -13,6 +13,7 @@ const Header = ({landingPages}) =>
         </button>
 
         <Menu landingPages={landingPages}></Menu>
+
       </div>
     </nav>
 

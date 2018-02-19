@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import ArticleReducers from './ArticleReducers'
-import FooterReducers from './FooterReducers'
-import MenuReducers from './MenuReducers'
-import PageReducers from './PageReducers'
+import ArticleReducers from './articleReducers'
+import FooterReducers from './footerReducers'
+import MenuReducers from './menuReducers'
+import PageReducers from './pageReducers'
 
 const reducer = combineReducers({
   FooterReducers,

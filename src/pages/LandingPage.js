@@ -3,14 +3,10 @@ import Masthead from '../ui/Masthead'
 import Loading from '../ui/Loading'
 import ArticleBody from '../ui/ArticleBody'
 import { connect } from 'react-redux';
-import { fetchPageByPath } from '../actions/PageActions';
+import { fetchPageByPath } from '../actions/pageActions';
 
 
 class LandingPage extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     const { dispatch } = this.props

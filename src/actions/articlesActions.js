@@ -2,11 +2,12 @@ import client from '../client.js'
 import gql from 'graphql-tag';
 import singleGql from '../queries/single-article.js'
 import articlesHomeGql from '../queries/home-articles.js'
-import { HOME_ARTICLES_ACTION, SINGLE_ARTICLES_ACTION } from '../constants.js'
+import * as CONST from '../constants.js'
+
 
 export const homeArticlesReceive = (articles, page = 1, showLoadMore) => {
   return {
-    type: HOME_ARTICLES_ACTION,
+    type: CONST.HOME_ARTICLES_ACTION,
     articles,
     page,
     showLoadMore
@@ -15,20 +16,19 @@ export const homeArticlesReceive = (articles, page = 1, showLoadMore) => {
 
 export const singleArticleReceive = (article) => {
   return {
-    type: SINGLE_ARTICLES_ACTION,
+    type: CONST.SINGLE_ARTICLES_ACTION,
     article,
   }
 }
 
 export const fetchSingleArticle = (dispatch, id) => {
-
   client.query({query : gql(singleGql(id))}).then(result => {
     return dispatch(singleArticleReceive(result.data.nodeById))
   })
 }
 
 export const fetchHomeArticle = (dispatch, page) => {
-  page = !(page) || page == 0 ? 1 : page
+  page = !(page) || page === 0 ? 1 : page
   const limit = page * 2
 
   client.query({query : gql(articlesHomeGql(limit))}).then(result => {

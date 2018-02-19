@@ -3,12 +3,9 @@ import Masthead from '../ui/Masthead'
 import ArticleList from '../ui/ArticleList'
 import Loading from '../ui/Loading'
 import { connect } from 'react-redux';
-import { fetchHomeArticle } from '../actions/ArticlesActions'
+import { fetchHomeArticle } from '../actions/articlesActions'
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     const { dispatch } = this.props
@@ -50,6 +47,5 @@ const mapStateToProps = (state) => {
     showLoadMore: state.ArticleReducers.showLoadMore
   })
 };
-
 
 export default connect(mapStateToProps)(Home);

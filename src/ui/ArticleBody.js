@@ -15,4 +15,5 @@ const AticleBody = ({ article }) => {
       </article>
     )
 }
+
 export default AticleBody;

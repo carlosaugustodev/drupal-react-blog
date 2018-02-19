@@ -20,7 +20,6 @@ const Masthead = ({title, subtitle, author, created, imageUrl}) => {
                   {created}</span>
                 : ''
               }
-
             </div>
           </div>
         </div>

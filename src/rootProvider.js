@@ -1,11 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.jsx';
+import App from './App';
 import { ApolloProvider } from 'react-apollo'
-import client from './client.js'
+import client from './client'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import reducer from "./reducers/reducers.js"
+import reducer from "./reducers/reducers"
 
 let store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 

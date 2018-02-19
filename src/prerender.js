@@ -15,6 +15,6 @@ window = {}
 // create the store
 prerenderer({
     html: '/Users/carpereira/Sites/react/drupal-react-blog/public/index.html',
-    app: '/Users/carpereira/Sites/react/drupal-react-blog/src/RootProvider.js',
+    app: '/Users/carpereira/Sites/react/drupal-react-blog/src/rootProvider.js',
     // pass the store to the provider app
 })

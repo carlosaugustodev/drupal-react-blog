@@ -1,6 +1,8 @@
+import * as CONST from '../constants.js'
+
 const FooterReducers = (state = [], action) => {
   switch (action.type) {
-    case 'FOOTER_ACTION':
+    case CONST.FOOTER_ACTION:
       return {
         ...state,
         footer: action.footer,

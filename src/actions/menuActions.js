@@ -1,10 +1,11 @@
 import menuLandingPages from '../queries/menu-landing-pages'
 import client from '../client.js'
 import gql from 'graphql-tag';
+import * as CONST from '../constants.js'
 
 export const menuLandingPagesReceive = (landingPages) => {
   return {
-    type: 'MENU_LANDING_PAGES_ACTION',
+    type: CONST.MENU_LANDING_PAGES_ACTION,
     landingPages,
   }
 }
