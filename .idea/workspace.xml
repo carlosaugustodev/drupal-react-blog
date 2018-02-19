@@ -2,8 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01b41699-00b1-4b54-a82c-180d8a2c1b8c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/App.jsx" afterPath="$PROJECT_DIR$/src/components/App.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/pages/Home.js" afterPath="$PROJECT_DIR$/src/components/pages/Home.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/App.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/actions/ArticlesActions.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/constants.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/pages/About.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/pages/Article.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/pages/Home.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/pages/LandingPages.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/queries/ArticlesQueries.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/queries/MenuQueries.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/queries/home-articles.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/reducers/ArticleReducers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/reducers/reducers.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/ui/ArticleBody.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/ui/ArticleList.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/ui/AticleItem.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/ui/Footer.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/ui/Header.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/ui/Masthead.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/ui/Menu.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,24 +32,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="menu.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="menu.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scss/menu.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.jsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/App.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="26" column="108" lean-forward="false" selection-start-line="26" selection-start-column="108" selection-end-line="26" selection-end-column="108" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -42,45 +48,6 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Home.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/pages/Home.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-48">
-              <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticlesQueries.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/queries/ArticlesQueries.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-                <marker date="1518840055118" expanded="true" signature="1018:1024" ph="/**...*/" />
-                <marker date="1518840055118" expanded="true" signature="1447:1505" ph="{...}" />
-                <marker date="1518840055118" expanded="true" signature="1464:1501" ph="{&quot;id&quot;: match.params.postId...}" />
-                <marker date="1518840055118" expanded="true" signature="1998:2067" ph="{...}" />
-                <marker date="1518840055118" expanded="true" signature="2015:2063" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LandingPages.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/pages/LandingPages.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -96,6 +63,7 @@
         <option value="$PROJECT_DIR$/src/components/queries/ArticlesQueries.js" />
         <option value="$PROJECT_DIR$/src/components/pages/Home.js" />
         <option value="$PROJECT_DIR$/src/components/App.jsx" />
+        <option value="$PROJECT_DIR$/src/scss/menu.css" />
       </list>
     </option>
   </component>
@@ -147,33 +115,6 @@
               <item name="drupal-react-blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="drupal-react-blog" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="drupal-react-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="drupal-react-blog" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="drupal-react-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="drupal-react-blog" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="queries" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="drupal-react-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="drupal-react-blog" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ui" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="drupal-react-blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="drupal-react-blog" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="scss" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -218,12 +159,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1518808799158</updated>
-      <workItem from="1518808801198" duration="1885000" />
+      <workItem from="1518808801198" duration="2005000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1885000" />
+    <option name="totallyTimeSpent" value="2005000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1253" height="733" extended-state="0" />
@@ -260,14 +201,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/scss/menu.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/menu.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -280,9 +213,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -298,14 +229,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
           <caret line="32" column="7" lean-forward="false" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-            <marker date="1518840055118" expanded="true" signature="1018:1024" ph="/**...*/" />
-            <marker date="1518840055118" expanded="true" signature="1447:1505" ph="{...}" />
-            <marker date="1518840055118" expanded="true" signature="1464:1501" ph="{&quot;id&quot;: match.params.postId...}" />
-            <marker date="1518840055118" expanded="true" signature="1998:2067" ph="{...}" />
-            <marker date="1518840055118" expanded="true" signature="2015:2063" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -321,9 +245,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="26" column="108" lean-forward="false" selection-start-line="26" selection-start-column="108" selection-end-line="26" selection-end-column="108" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/menu.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

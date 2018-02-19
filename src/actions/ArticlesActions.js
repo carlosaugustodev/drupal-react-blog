@@ -24,6 +24,7 @@ export const homeArticlesReceive = (articles, page = 1, showLoadMore) => {
 export const fetchHomeArticle = (dispatch, page) => {
   page = !(page) || page == 0 ? 1 : page
   const limit = page * 2
+
   client.query({query : gql(articlesHomeGql(limit))}).then(result => {
 
     const showLoadMore = limit < result.data.nodeQuery.count ? true : false;

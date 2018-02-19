@@ -11,7 +11,7 @@ import { ApolloProvider } from 'react-apollo'
 import { ApolloClient } from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
-import "../scss/menu.css"
+import "./scss/menu.css"
 
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
@@ -23,7 +23,7 @@ const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache()
 })
-
+window.__APOLLO_CLIENT__
 let store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 class App extends Component {

@@ -1,6 +1,7 @@
 import React from 'react';
 import Masthead from '../ui/Masthead'
 import ArticleList from '../ui/ArticleList'
+import Loading from '../ui/Loading'
 import { connect } from 'react-redux';
 import { fetchHomeArticle } from '../actions/ArticlesActions'
 
@@ -21,8 +22,10 @@ class Home extends React.Component {
 
   render(){
 
+
+
     if (!(this.props.articles) || this.props.articles.length === 0) {
-      return (<div>Loading</div>)
+      return (<Loading />)
     }
 
     const data = this.props.articles;

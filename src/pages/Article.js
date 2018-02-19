@@ -3,6 +3,7 @@ import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import Masthead from '../ui/Masthead'
 import ArticleBody from '../ui/ArticleBody'
+import Loading from '../ui/Loading'
 import { SingleArticle } from '../queries/ArticlesQueries.js'
 
 

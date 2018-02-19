@@ -13,7 +13,7 @@ const Masthead = ({title, subtitle, author, created, imageUrl}) => {
           <div className="col-lg-8 col-md-10 mx-auto">
             <div className="post-heading">
               <h1>{title}</h1>
-              <h2 className="subheading">{subtitle.substring(1, 100)}</h2>
+              <h2 className="subheading">{subtitle ? subtitle.substring(0, 100) : ''}</h2>
               { author != undefined ?
                 <span className="meta">Posted by
                   <a href="#"> {author} </a>
