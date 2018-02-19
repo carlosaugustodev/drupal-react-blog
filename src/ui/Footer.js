@@ -1,6 +1,7 @@
 import React from 'react';
+import Parser from 'html-react-parser';
 
-const Footer = () =>
+const Footer = (props) =>
 
 <footer>
   <div className="container">
@@ -16,7 +17,7 @@ const Footer = () =>
             </a>
           </li>
           <li className="list-inline-item">
-            <a href="#">
+            <a href={props.fieldFacebookLink}>
               <span className="fa-stack fa-lg">
                 <i className="fa fa-circle fa-stack-2x"></i>
                 <i className="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -32,7 +33,7 @@ const Footer = () =>
             </a>
           </li>
         </ul>
-        <p className="copyright text-muted">Copyright &copy; Your Website 2018</p>
+        <p className="copyright text-muted">{props.fieldCopyright ? Parser(props.fieldCopyright.value) : ''}</p>
       </div>
     </div>
   </div>

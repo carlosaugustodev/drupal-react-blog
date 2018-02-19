@@ -2,26 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01b41699-00b1-4b54-a82c-180d8a2c1b8c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/App.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/actions/ArticlesActions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/constants.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/pages/About.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/pages/Article.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/pages/Home.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/pages/LandingPages.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/queries/ArticlesQueries.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/queries/MenuQueries.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/queries/home-articles.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/reducers/ArticleReducers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/reducers/reducers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/ui/ArticleBody.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/ui/ArticleList.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/ui/AticleItem.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/ui/Footer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/ui/Header.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/ui/Masthead.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/components/ui/Menu.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.jsx" afterPath="$PROJECT_DIR$/src/App.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/ArticlesActions.js" afterPath="$PROJECT_DIR$/src/actions/ArticlesActions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/constants.js" afterPath="$PROJECT_DIR$/src/constants.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Article.js" afterPath="$PROJECT_DIR$/src/pages/Article.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Home.js" afterPath="$PROJECT_DIR$/src/pages/Home.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/ArticleReducers.js" afterPath="$PROJECT_DIR$/src/reducers/ArticleReducers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ui/Menu.js" afterPath="$PROJECT_DIR$/src/ui/Menu.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,11 +20,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="menu.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/scss/menu.css">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scss/menu.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -159,12 +159,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1518808799158</updated>
-      <workItem from="1518808801198" duration="2005000" />
+      <workItem from="1518808801198" duration="2215000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2005000" />
+    <option name="totallyTimeSpent" value="2215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1253" height="733" extended-state="0" />
@@ -251,9 +251,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/menu.css">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

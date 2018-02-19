@@ -1,50 +1,41 @@
 import React from 'react';
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
 import Masthead from '../ui/Masthead'
-import ArticleBody from '../ui/ArticleBody'
 import Loading from '../ui/Loading'
-import { fetchSingleArticle } from '../actions/ArticlesActions'
+import ArticleBody from '../ui/ArticleBody'
 import { connect } from 'react-redux';
-import Home from './Home'
+import { fetchPageByPath } from '../actions/PageActions';
 
 
+class LandingPage extends React.Component {
 
-class Article extends React.Component {
-
+  constructor(props) {
+    super(props);
+  }
 
   componentDidMount() {
-
     const { dispatch } = this.props
-    const id = this.props.params.postId
-    fetchSingleArticle(dispatch, id)
+    fetchPageByPath(dispatch, "/pages/" + this.props.params.alias)
   }
 
   render() {
-    const article = this.props.article
-
-    if (!article) {
-      return (<div>Loading</div>)
+    if (!this.props.page) {
+      return < Loading/>
     }
 
     return (
-
       <div>
-
         <Masthead {...this.props.articleMastahed} />
-        <ArticleBody article={article}/>
-
+        <ArticleBody article={this.props.page}/>
       </div>
-
     )
   }
 }
 
 const mapStateToProps = (state) => {
 
-  const article = (state.ArticleReducers.article) ? state.ArticleReducers.article : {};
+  const article = (state.PageReducers.page) ? state.PageReducers.page : {};
   return ({
-    article : state.ArticleReducers.article,
+    page : article,
     articleMastahed : {
       title : article.entityLabel,
       subtitle : (article.body) && (article.body.summary) ? article.body.summary : '',
@@ -55,4 +46,4 @@ const mapStateToProps = (state) => {
   })
 };
 
-export default connect(mapStateToProps)(Article);
+export default connect(mapStateToProps)(LandingPage);

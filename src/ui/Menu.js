@@ -1,15 +1,10 @@
 import React from 'react';
-import { menuLanding } from '../queries/MenuQueries.js';
 
+const Menu = ({landingPages}) => {
 
-const Menu = ({data}) => {
-
-  if (data.loading) {
+  if (!landingPages) {
     return (<div>Loading</div>)
   }
-
-  const links = data.menuByName.links;
-  console.log(links);
 
   return (
     <div className="collapse navbar-collapse" id="navbarResponsive">
@@ -24,7 +19,7 @@ const Menu = ({data}) => {
           <a href="#" className="dropdown-toggle" data-toggle="dropdown">Dropdown <b className="caret"></b></a>
           <ul className="dropdown-menu">
             {
-              links.map((link, k) => {
+              landingPages.map((link, k) => {
                 return (<li key={k} className="nav-item"><a href={link.url.alias}>{link.label}</a></li>)
               })
             }
@@ -36,6 +31,4 @@ const Menu = ({data}) => {
   )
 }
 
-
-
-export default menuLanding(Menu);
+export default Menu;

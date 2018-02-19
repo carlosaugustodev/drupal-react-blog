@@ -1,8 +1,7 @@
 import React from 'react';
 import Menu from './Menu';
 
-const Header = () =>
-
+const Header = ({landingPages}) =>
 
   <div >
     <nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -13,7 +12,7 @@ const Header = () =>
           <i className="fa fa-bars"></i>
         </button>
 
-        <Menu></Menu>
+        <Menu landingPages={landingPages}></Menu>
       </div>
     </nav>
 

@@ -22,8 +22,6 @@ class Home extends React.Component {
 
   render(){
 
-
-
     if (!(this.props.articles) || this.props.articles.length === 0) {
       return (<Loading />)
     }

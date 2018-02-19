@@ -9,12 +9,14 @@ import reducer from "./reducers/reducers.js"
 
 let store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
-const root = (
-  <Provider store={store}>
-    <ApolloProvider client={client}>
-      <App client={client}/>
-    </ApolloProvider>
-  </Provider>
-)
+const root = () => {
+  return (
+    <Provider store={store}>
+      <ApolloProvider client={client}>
+        <App client={client}/>
+      </ApolloProvider>
+    </Provider>
+  )
+}
 
-ReactDOM.render(root, document.getElementById('root'));
+export default root;

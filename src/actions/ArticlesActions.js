@@ -1,16 +1,8 @@
-import { ApolloClient } from 'apollo-client'
-import { HttpLink } from 'apollo-link-http'
-import { InMemoryCache } from 'apollo-cache-inmemory'
+import client from '../client.js'
 import gql from 'graphql-tag';
+import singleGql from '../queries/single-article.js'
 import articlesHomeGql from '../queries/home-articles.js'
-import { HOME_ARTICLES_ACTION } from '../constants.js'
-
-const httpLink = new HttpLink({ uri: 'http://decoup2.dd:8083/graphql' })
-
-const client = new ApolloClient({
-  link: httpLink,
-  cache: new InMemoryCache()
-})
+import { HOME_ARTICLES_ACTION, SINGLE_ARTICLES_ACTION } from '../constants.js'
 
 export const homeArticlesReceive = (articles, page = 1, showLoadMore) => {
   return {
@@ -21,6 +13,20 @@ export const homeArticlesReceive = (articles, page = 1, showLoadMore) => {
   }
 }
 
+export const singleArticleReceive = (article) => {
+  return {
+    type: SINGLE_ARTICLES_ACTION,
+    article,
+  }
+}
+
+export const fetchSingleArticle = (dispatch, id) => {
+
+  client.query({query : gql(singleGql(id))}).then(result => {
+    return dispatch(singleArticleReceive(result.data.nodeById))
+  })
+}
+
 export const fetchHomeArticle = (dispatch, page) => {
   page = !(page) || page == 0 ? 1 : page
   const limit = page * 2
@@ -28,6 +34,7 @@ export const fetchHomeArticle = (dispatch, page) => {
   client.query({query : gql(articlesHomeGql(limit))}).then(result => {
 
     const showLoadMore = limit < result.data.nodeQuery.count ? true : false;
+
     return dispatch(homeArticlesReceive(result.data.nodeQuery.entities, limit, showLoadMore))
   })
 }
