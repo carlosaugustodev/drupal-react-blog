@@ -11,9 +11,7 @@ let store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__
 
 const root = (
   <Provider store={store}>
-    <ApolloProvider client={client}>
       <App client={client}/>
-    </ApolloProvider>
   </Provider>
 )
 

@@ -2,16 +2,20 @@ import React from 'react';
 import Masthead from '../components/Masthead'
 import ArticleBody from '../components/ArticleBody'
 import Loading from '../components/Loading'
-import { fetchSingleArticle } from '../actions/articlesActions'
+// import { fetchSingleArticle } from '../actions/articlesActions'
 import { connect } from 'react-redux';
 
 class Article extends React.Component {
 
-  componentDidMount() {
-    const { dispatch } = this.props
-    const id = this.props.params.postId
-    fetchSingleArticle(dispatch, id)
-  }
+  // componentDidMount() {
+  //   const { dispatch } = this.props
+    
+  //   if (this.props.params) {
+  //     const id = this.props.params.postId
+  //     // fetchSingleArticle(dispatch, id)  
+  //   }
+    
+  // }
 
   render() {
     const article = this.props.article
