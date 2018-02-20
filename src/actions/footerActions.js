@@ -1,6 +1,6 @@
 import client from '../client.js'
 import gql from 'graphql-tag';
-import footerGql from '../queries/footer-query.js'
+import footerGql from '../queries/footer.js'
 import * as CONST from '../constants.js'
 
 export const footerReceive = (footer) => {
