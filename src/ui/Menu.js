@@ -1,9 +1,10 @@
 import React from 'react';
+import Loading from '../ui/Loading';
 
 const Menu = ({landingPages}) => {
 
   if (!landingPages) {
-    return (<div>Loading</div>)
+    return ''
   }
 
   return (

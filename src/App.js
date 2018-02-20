@@ -12,7 +12,7 @@ import LandingPage from './pages/LandingPage'
 import Header from './ui/Header'
 import Footer from './ui/Footer'
 // Import style
-import "./scss/menu.css"
+import "./scss/styles.css"
 
 class App extends Component {
 

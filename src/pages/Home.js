@@ -20,7 +20,7 @@ class Home extends React.Component {
   render(){
 
     if (!(this.props.articles) || this.props.articles.length === 0) {
-      return (<Loading />)
+      return <Loading/>
     }
 
     const data = this.props.articles;
@@ -31,7 +31,7 @@ class Home extends React.Component {
 
         { !data.loading ?
             <ArticleList articles={data} loadMoreFunction={this.loadMoreHandle} showLoadMore={this.props.showLoadMore} ></ArticleList>
-            : <div>Loading</div>
+            : <Loading/>
         }
 
       </div>

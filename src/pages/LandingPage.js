@@ -15,7 +15,7 @@ class LandingPage extends React.Component {
 
   render() {
     if (!this.props.page) {
-      return < Loading/>
+      return ''
     }
 
     return (

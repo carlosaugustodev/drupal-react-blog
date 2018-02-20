@@ -1,6 +1,7 @@
 import React from 'react';
 import Masthead from '../ui/Masthead'
 import ArticleBody from '../ui/ArticleBody'
+import Loading from '../ui/Loading'
 import { fetchSingleArticle } from '../actions/articlesActions'
 import { connect } from 'react-redux';
 
@@ -16,12 +17,12 @@ class Article extends React.Component {
     const article = this.props.article
 
     if (!article) {
-      return (<div>Loading</div>)
+      return <Loading/>
     }
 
     return (
       <div>
-        <Masthead {...this.props.articleMastahed} />
+        <Masthead {...this.props.articleMasthead} />
         <ArticleBody article={article}/>
       </div>
     )
@@ -34,7 +35,7 @@ const mapStateToProps = (state) => {
 
   return ({
     article : state.ArticleReducers.article,
-    articleMastahed : {
+    articleMasthead : {
       title : article.entityLabel,
       subtitle : (article.body) && (article.body.summary) ? article.body.summary : '',
       author : (article.entityOwner) ? article.entityOwner.entityLabel : '',

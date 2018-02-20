@@ -1,10 +1,16 @@
 import React from 'react'
+import Loading from '../ui/Loading'
 
 const Masthead = ({title, subtitle, author, created, imageUrl}) => {
   const style = {
     backgroundImage : `url(${imageUrl})`,
 
   }
+
+  if (!title) {
+    return <Loading/>
+  }
+
   return (
     <header className="masthead" style={style}>
       <div className="overlay"></div>
