@@ -27,9 +27,14 @@
     "react-redux": "^5.0.7",
     "react-router": "^3.2.0",
     "react-scripts": "1.1.1",
+<<<<<<< HEAD
     "react-seo": "^1.0.11",
+=======
+    "react-slick": "^0.18.1",
+>>>>>>> 4485d29d6377c3ba6607638997a0149e22ff55c1
     "recompose": "^0.26.0",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
