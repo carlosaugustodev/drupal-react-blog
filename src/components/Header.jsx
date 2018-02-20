@@ -16,7 +16,6 @@ const Header = ({landingPages}) =>
 
       </div>
     </nav>
-
   </div>
 
 export default Header;

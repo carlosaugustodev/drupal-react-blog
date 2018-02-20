@@ -1,7 +1,7 @@
 import React from 'react';
-import Masthead from '../ui/Masthead'
-import ArticleBody from '../ui/ArticleBody'
-import Loading from '../ui/Loading'
+import Masthead from '../components/Masthead'
+import ArticleBody from '../components/ArticleBody'
+import Loading from '../components/Loading'
 import { fetchSingleArticle } from '../actions/articlesActions'
 import { connect } from 'react-redux';
 

@@ -4,13 +4,13 @@ import { Router, Route, browserHistory } from 'react-router'
 import { fetchFooter } from "./actions/footerActions"
 import { fetchLandingPages } from "./actions/menuActions"
 // Import Pages
-import Home from './pages/Home'
-import About from './pages/About'
-import Article from './pages/Article'
-import LandingPage from './pages/LandingPage'
+import Home from './container/Home'
+import About from './container/About'
+import Article from './container/Article'
+import LandingPage from './container/LandingPage'
 //Import Components
-import Header from './ui/Header'
-import Footer from './ui/Footer'
+import Header from './components/Header'
+import Footer from './components/Footer'
 // Import style
 import "./scss/styles.css"
 

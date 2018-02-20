@@ -1,5 +1,5 @@
 import React from 'react'
-import Loading from '../ui/Loading'
+import Loading from './/Loading'
 
 const Masthead = ({title, subtitle, author, created, imageUrl}) => {
   const style = {
@@ -20,7 +20,7 @@ const Masthead = ({title, subtitle, author, created, imageUrl}) => {
             <div className="post-heading">
               <h1>{title}</h1>
               <h2 className="subheading">{subtitle ? subtitle.substring(0, 100) : ''}</h2>
-              { author != undefined ?
+              { author !== undefined ?
                 <span className="meta">Posted by
                   <a href="#"> {author} </a>
                   {created}</span>

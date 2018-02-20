@@ -1,9 +1,10 @@
 import React from 'react';
-import Masthead from '../ui/Masthead'
-import ArticleList from '../ui/ArticleList'
-import Loading from '../ui/Loading'
 import { connect } from 'react-redux';
 import { fetchHomeArticle } from '../actions/articlesActions'
+
+import Masthead from '../components/Masthead'
+import ArticleList from '../components/ArticleList'
+import Loading from '../components/Loading'
 
 class Home extends React.Component {
 

@@ -1,7 +1,9 @@
 import React from 'react';
 import Parser from 'html-react-parser';
 
-const AticleBody = ({ article }) => {
+const ArticleBody = ({ article }) => {
+
+
 
     return (
       <article>
@@ -16,4 +18,4 @@ const AticleBody = ({ article }) => {
     )
 }
 
-export default AticleBody;
+export default ArticleBody;

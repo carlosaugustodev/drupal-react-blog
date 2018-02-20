@@ -1,9 +1,9 @@
 import React from 'react';
-import Masthead from '../ui/Masthead'
-import Loading from '../ui/Loading'
-import ArticleBody from '../ui/ArticleBody'
 import { connect } from 'react-redux';
 import { fetchPageByPath } from '../actions/pageActions';
+
+import ArticleBody from '../components/ArticleBody'
+import Masthead from '../components/Masthead'
 
 
 class LandingPage extends React.Component {

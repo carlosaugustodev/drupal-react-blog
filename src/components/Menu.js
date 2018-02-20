@@ -1,5 +1,4 @@
 import React from 'react';
-import Loading from '../ui/Loading';
 
 const Menu = ({landingPages}) => {
 
@@ -14,7 +13,7 @@ const Menu = ({landingPages}) => {
           <a className="nav-link" href="/">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/about">About</a>
+          <a className="nav-link" href="/pages/about">About</a>
         </li>
         <li className="dropdown nav-item">
           <a href="#" className="dropdown-toggle" data-toggle="dropdown">Dropdown <b className="caret"></b></a>
