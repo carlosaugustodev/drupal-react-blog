@@ -18,6 +18,8 @@
 .idea/*
 
 /.next
+/src/.next
+/.idea
 
 npm-debug.log*
 yarn-debug.log*

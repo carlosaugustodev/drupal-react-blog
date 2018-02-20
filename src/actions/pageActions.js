@@ -11,7 +11,9 @@ export const pageByPathReceive = (page) => {
 }
 
 export const fetchPageByPath = (dispatch, path) => {
-  client.query({query : gql(landingPageBypathGql(path))}).then(result => {
+
+  return (async () => {
+    const result = await client.query({query : gql(landingPageBypathGql(path))});
     return dispatch(pageByPathReceive(result.data.route.nodeContext))
-  })
+  })()
 }

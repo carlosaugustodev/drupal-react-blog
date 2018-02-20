@@ -8,9 +8,9 @@ import Loading from '../components/Loading'
 
 class Home extends React.Component {
 
-  componentDidMount() {
-    const { dispatch } = this.props
-    fetchHomeArticle(dispatch)
+  static async getInitialProps(store, isServer, pathname, query){
+    
+    await fetchHomeArticle(store.dispatch)
   }
 
   loadMoreHandle = () => {

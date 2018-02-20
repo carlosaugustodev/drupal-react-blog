@@ -8,14 +8,14 @@ import Masthead from '../components/Masthead'
 
 class LandingPage extends React.Component {
 
-  componentDidMount() {
-    const { dispatch } = this.props
-    fetchPageByPath(dispatch, "/pages/" + this.props.params.alias)
+  static async getInitialProps(store, isServer, pathname, query){
+    
+    await fetchPageByPath(store.dispatch, "/pages/" + query.id)
   }
 
   render() {
     if (!this.props.page) {
-      return ''
+      return 'opa'
     }
 
     return (
@@ -28,7 +28,7 @@ class LandingPage extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-
+  console.log(state);
   const article = (state.PageReducers.page) ? state.PageReducers.page : {};
   return ({
     page : article,

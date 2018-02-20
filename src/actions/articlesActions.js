@@ -22,19 +22,21 @@ export const singleArticleReceive = (article) => {
 }
 
 export const fetchSingleArticle = (dispatch, id) => {
-  client.query({query : gql(singleGql(id))}).then(result => {
+  return (async () => {
+    const result = await client.query({query : gql(singleGql(id))});
     return dispatch(singleArticleReceive(result.data.nodeById))
-  })
+  })()
 }
 
 export const fetchHomeArticle = (dispatch, page) => {
   page = !(page) || page === 0 ? 1 : page
   const limit = page * 2
 
-  client.query({query : gql(articlesHomeGql(limit))}).then(result => {
-
+  return (async () => {
+      
+    const result = await client.query({query : gql(articlesHomeGql(limit))});
     const showLoadMore = limit < result.data.nodeQuery.count ? true : false;
 
     return dispatch(homeArticlesReceive(result.data.nodeQuery.entities, limit, showLoadMore))
-  })
+  })()
 }
