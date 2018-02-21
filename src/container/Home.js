@@ -37,7 +37,7 @@ class Home extends React.Component {
         <Carousel>
             {
                 this.props.banners.map((banner, k) =>
-                    <div><Banner banner={banner} key={k}/></div>
+                    <div key={k}><Banner banner={banner} /></div>
                 )
             }
         </Carousel>
