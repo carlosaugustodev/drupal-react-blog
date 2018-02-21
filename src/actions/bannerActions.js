@@ -11,8 +11,9 @@ export const bannerReceive = (banner) => {
 }
 
 export const fetchBanner = (dispatch) => {
-  client.query({query : gql(bannerGql())}).then(result => {
+  return (async () => {
+    const result = await client.query({query : gql(bannerGql())})
     return dispatch(bannerReceive(result.data.nodeQuery.entities))
-  })
+  })()
 }
 

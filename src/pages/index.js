@@ -37,7 +37,7 @@ class root extends React.Component {
 		
 		return (
 			<Main>
-       			<TagName />
+				<TagName />
 			</Main>
 		)
 	}

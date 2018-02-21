@@ -6,6 +6,7 @@ import { fetchBanner } from '../actions/bannerActions'
 import ArticleList from '../components/ArticleList'
 import Banner from '../components/Banner'
 import Loading from '../components/Loading'
+import Carousel from '../components/Carousel'
 
 class Home extends React.Component {
 
@@ -26,11 +27,14 @@ class Home extends React.Component {
       return <Loading/>
     }
 
-    const data = this.props.articles;
+    const data = this.props.articles
 
     return (
+
       <div>
-        <Banner {...this.props.banner}/>
+        <Carousel>
+          <Banner banners={this.props.banners} />
+        </Carousel>
 
         { !data.loading ?
             <ArticleList articles={data} loadMoreFunction={this.loadMoreHandle} showLoadMore={this.props.showLoadMore} ></ArticleList>
@@ -43,7 +47,7 @@ class Home extends React.Component {
 
 const mapStateToProps = (state) => {
   return ({
-    banner : state.BannerReducers.banner,
+    banners : state.BannerReducers.banner,
     articles : state.ArticleReducers.articles,
     page: state.ArticleReducers.page,
     showLoadMore: state.ArticleReducers.showLoadMore
