@@ -4,21 +4,22 @@ import Home from '../container/Home';
 import Article from '../container/Article';
 import LandingPage from '../container/LandingPage';
 import withStore from "../withStore"
-import { fetchSingleArticle } from '../actions/articlesActions'
 import { mainFetch } from '../actions/commonActions'
 
+const components  = {
+	"post" : Article,
+	"pages" : LandingPage
+}
 
 const getComponent = (path = "") => {
-	
-	let component = {}
+	//Default component
+	let component = Home
 
-	if (path.indexOf('post') !== -1) {
-		component = Article 
-	} else if (path.indexOf('pages') !== -1) {
-		component = LandingPage 
-	} else {
-		component = Home 
-	}
+  Object.keys(components).map((key) => {
+    if (path.indexOf(key) !== -1) {
+      component = components[key]
+    }
+	});
 
 	return component
 }
