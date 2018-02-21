@@ -22,6 +22,7 @@
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
     "path": "^0.12.7",
+    "raw-loader": "^0.5.1",
     "react": "^16.2.0",
     "react-apollo": "^2.0.4",
     "react-dom": "^16.2.0",
@@ -31,7 +32,8 @@
     "react-slick": "^0.18.1",
     "recompose": "^0.26.0",
     "redux": "^3.7.2",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "webpack": "^3.11.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
@@ -43,7 +45,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "start2": "next dev",
-    "node": "node server.js && npm run watch-css"
+    "node": "node server.js && npm run watch-css",
+    "start3": "node server.js",
+    "dev": "webpack && npm start3"
   },
   "devDependencies": {
     "node-sass": "^4.7.2",

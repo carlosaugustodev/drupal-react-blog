@@ -7,12 +7,13 @@ import ArticleList from '../components/ArticleList'
 import Banner from '../components/Banner'
 import Loading from '../components/Loading'
 import Carousel from '../components/Carousel'
+import Head from '../components/Head'
 
 class Home extends React.Component {
 
 
   static async getInitialProps(store, isServer, pathname, query){
-    
+
     await fetchHomeArticle(store.dispatch)
     await fetchBanner(store.dispatch)
   }
@@ -32,8 +33,13 @@ class Home extends React.Component {
     return (
 
       <div>
+        <Head title={"Opa"}/>
         <Carousel>
-          <Banner banners={this.props.banners} />
+            {
+                this.props.banners.map((banner, k) =>
+                    <div><Banner banner={banner} key={k}/></div>
+                )
+            }
         </Carousel>
 
         { !data.loading ?

@@ -2,17 +2,15 @@ import React from 'react'
 import Loading from './Loading'
 import Parser from 'html-react-parser'
 
-const Banner = ({banners}) => {
+const Banner = ({banner}) => {
 
-  if (!(banners) || banners.length === 0) {
+  if (!(banner) || banner.length === 0) {
     return <Loading/>
   }
 
   return (
-    banners.map(
-      (banner, key) =>
-        (
-          <header key={key} className="masthead" style={{backgroundImage : `url(${(banner.fieldImage) ? banner.fieldImage.url : ''})`}}>
+
+          <header className="masthead" style={{backgroundImage : `url(${(banner.fieldImage) ? banner.fieldImage.url : ''})`}}>
             <div className="overlay"></div>
             <div className="container">
               <div className="row">
@@ -26,8 +24,8 @@ const Banner = ({banners}) => {
               </div>
             </div>
           </header>
-        )
-    )
+
+
   )
 }
 export default Banner;

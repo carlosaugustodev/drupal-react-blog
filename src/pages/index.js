@@ -6,7 +6,6 @@ import LandingPage from '../container/LandingPage';
 import withStore from "../withStore"
 import { mainFetch } from '../actions/commonActions'
 
-import '../scss/styles.scss'
 
 const components  = {
 	"post" : Article,
