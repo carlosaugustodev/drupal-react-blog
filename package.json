@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@zeit/next-sass": "^0.1.1",
     "apollo-cache-inmemory": "^1.1.9",
     "apollo-client": "^2.2.5",
     "apollo-link": "^1.2.0",
@@ -41,7 +42,8 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "start2": "next dev"
+    "start2": "next dev",
+    "node": "node server.js && npm run watch-css"
   },
   "devDependencies": {
     "node-sass": "^4.7.2",

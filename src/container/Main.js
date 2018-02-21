@@ -6,6 +6,10 @@ import { fetchLandingPages } from "../actions/menuActions"
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+// import style
+import "../scss/styles.scss"
+
+
 
 class Main extends Component {
 
