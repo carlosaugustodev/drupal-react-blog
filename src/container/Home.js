@@ -8,6 +8,9 @@ import Banner from '../components/Banner'
 import Loading from '../components/Loading'
 import Carousel from '../components/Carousel'
 import Head from '../components/Head'
+import { translate } from 'react-i18next';
+
+import i18n from '../i18n';
 
 class Home extends React.Component {
 
@@ -16,6 +19,15 @@ class Home extends React.Component {
 
     await fetchHomeArticle(store.dispatch)
     await fetchBanner(store.dispatch)
+  }
+
+  componentDidMount() {
+    console.log(this.props)
+    // const { dispatch, page } = this.props
+    // fetchHomeArticle(dispatch)
+    // fetchBanner(dispatch)
+
+
   }
 
   loadMoreHandle = () => {
@@ -33,6 +45,7 @@ class Home extends React.Component {
     return (
 
       <div>
+        {this.props.t("common.hello")}
         <Head title={"Opa"}/>
         <Carousel>
             {
@@ -60,4 +73,20 @@ const mapStateToProps = (state) => {
   })
 };
 
-export default connect(mapStateToProps)(Home);
+const opa = connect(mapStateToProps)(Home)
+
+
+const Extended = translate(['common'], { i18n, wait: process.browser })(opa);
+
+// Passing down initial translations
+// use req.i18n instance on serverside to avoid overlapping requests set the language wrong
+Extended.getInitialProps = async (props) => {
+
+  await fetchHomeArticle(props.dispatch)
+  await fetchBanner(props.dispatch)
+
+  if (props.req && !process.browser) return i18n.getInitialProps(props.req, [ 'common']);
+  return props;
+};
+
+export default Extended;

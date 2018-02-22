@@ -10,21 +10,64 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev, dir: './src' })
 const handle = routes.getRequestHandler(app)
 
-app.prepare().then(() => {
-  createServer((req, res) => {
-    // Be sure to pass `true` as the second argument to `url.parse`.
-    // This tells it to parse the query portion of the URL.
-    const parsedUrl = parse(req.url, true)
-    const { pathname, query } = parsedUrl
+const express = require('express')
+const i18nextMiddleware = require('i18next-express-middleware');
+const Backend = require('i18next-node-fs-backend');
+const i18n = require('./src/i18n');
 
-    if (pathname === '/a') {
-      app.render(req, res, '/b', query)
-    } else {
-      handle(req, res, parsedUrl)
+
+// init i18next with serverside settings
+// using i18next-express-middleware
+i18n
+  .use(Backend)
+  .use(i18nextMiddleware.LanguageDetector)
+  .init({
+    fallbackLng: 'en',
+    preload: ['en', 'pt'], // preload all langages
+    ns: ['common'], // need to preload all the namespaces
+    backend: {
+      loadPath: __dirname + '/src/locales/{{lng}}/{{ns}}.json',
+      addPath: __dirname + '/src/locales/{{lng}}/{{ns}}.missing.json'
     }
+  }, () => {
+    app.prepare().then(() => {
 
-  }).listen(3000, err => {
-    if (err) throw err
-    console.log('> Ready on http://localhost:3000')
-  })
-})
+      // const server = createServer((req, res) => {
+      //
+      //   // Be sure to pass `true` as the second argument to `url.parse`.
+      //   // This tells it to parse the query portion of the URL.
+      //   const parsedUrl = parse(req.url, true)
+      //   const {pathname, query} = parsedUrl
+      //
+      //
+      //   handle(req, res, parsedUrl)
+      //
+      // });
+      var server = express();
+
+
+
+
+      server.use(i18nextMiddleware.handle(i18n));
+
+      // serve locales for client
+      server.use('/locales', express.static(__dirname + '/locales'))
+
+      // missing keys
+      server.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18n));
+
+      server.get('*', (req, res) => {
+        const parsedUrl = parse(req.url, true)
+        const {pathname, query} = parsedUrl
+        handle(req, res, parsedUrl)
+      })
+
+
+      server.listen(3000, err => {
+        if (err) throw err
+        console.log('> Ready on http://localhost:3000')
+      })
+    })
+
+  });
+
