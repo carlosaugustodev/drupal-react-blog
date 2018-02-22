@@ -1,0 +1,16 @@
+// Bootstrap
+@import "../static/vendor/font-awesome/css/font-awesome.min.css";
+@import "../static/vendor/bootstrap/css/bootstrap.min.css";
+
+// Components
+@import "components/_Banner.scss";
+@import "components/_Footer.scss";
+@import "components/_Loading.scss";
+@import "components/_Menu.scss";
+
+// Plugins
+@import "../static/vendor/slick-carousel/slick/slick.scss";
+@import "../static/vendor/slick-carousel/slick/slick-theme.scss";
+
+// General
+@import "./_general.scss";

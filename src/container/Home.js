@@ -13,6 +13,11 @@ import withStyle from '../lib/WithStyle'
 
 class Home extends React.Component {
 
+  /*componentDidMount(){
+    const { dispatch } = this.props
+    fetchHomeArticle(store.dispatch)
+    fetchBanner(store.dispatch)
+  }*/
 
   static async getInitialProps(store, isServer, pathname, query){
 
@@ -40,7 +45,7 @@ class Home extends React.Component {
         <Carousel>
             {
                 this.props.banners.map((banner, k) =>
-                    <div><Banner banner={banner} key={k}/></div>
+                    <div key={k}><Banner banner={banner} /></div>
                 )
             }
         </Carousel>
