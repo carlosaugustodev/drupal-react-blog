@@ -11,6 +11,11 @@ import Head from '../components/Head'
 
 class Home extends React.Component {
 
+  /*componentDidMount(){
+    const { dispatch } = this.props
+    fetchHomeArticle(store.dispatch)
+    fetchBanner(store.dispatch)
+  }*/
 
   static async getInitialProps(store, isServer, pathname, query){
 
