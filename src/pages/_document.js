@@ -1,6 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import flush from 'styled-jsx/server'
-import  css from  '../scss/styles.css'
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -29,7 +28,6 @@ export default class MyDocument extends Document {
 
           <link href="/static/css/clean-blog.min.css" rel="stylesheet" />
           <link href="/static/css/clean-blog.min.css" rel="stylesheet" />
-          <style dangerouslySetInnerHTML={{ __html: css }} />
         </Head>
 
         <body>

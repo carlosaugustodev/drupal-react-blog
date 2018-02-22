@@ -5,6 +5,8 @@ import { fetchLandingPages } from "../actions/menuActions"
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import withStyle from '../lib/WithStyle.js'
+import style from '../styles/general.css'
 
 class Main extends Component {
 
@@ -16,13 +18,14 @@ class Main extends Component {
 
   render() {
     return (
-      
+
 	    <div>
+        { withStyle(style) }
 		    <Header landingPages={this.props.landingPages}></Header>
 		    {this.props.children}
 		    <Footer {...this.props.footer}></Footer>
 	    </div>
-      
+
     )
   }
 }

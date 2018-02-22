@@ -2,13 +2,14 @@ import React from 'react';
 import Masthead from '../components/Masthead'
 import ArticleBody from '../components/ArticleBody'
 import Loading from '../components/Loading'
+import Head from '../components/Head'
 import { fetchSingleArticle } from '../actions/articlesActions'
 import { connect } from 'react-redux';
 
 class Article extends React.Component {
 
   static async getInitialProps(store, isServer, pathname, query){
-    
+
     await fetchSingleArticle(store.dispatch, query.id)
   }
 
@@ -21,6 +22,7 @@ class Article extends React.Component {
 
     return (
       <div>
+        <Head title={article.entityLabel}/>
         <Masthead {...this.props.articleMasthead} />
         <ArticleBody article={article}/>
       </div>

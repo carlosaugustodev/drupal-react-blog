@@ -4,22 +4,23 @@ import { fetchPageByPath } from '../actions/pageActions';
 
 import ArticleBody from '../components/ArticleBody'
 import Masthead from '../components/Masthead'
-
+import Head from '../components/Head'
 
 class LandingPage extends React.Component {
 
   static async getInitialProps(store, isServer, pathname, query){
-    
+
     await fetchPageByPath(store.dispatch, "/pages/" + query.id)
   }
 
   render() {
     if (!this.props.page) {
-      return 'opa'
+      return ''
     }
 
     return (
       <div>
+        <Head title={this.props.page.entityLabel}/>
         <Masthead {...this.props.articleMastahed} />
         <ArticleBody article={this.props.page}/>
       </div>

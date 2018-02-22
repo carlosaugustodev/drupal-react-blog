@@ -8,6 +8,8 @@ import Banner from '../components/Banner'
 import Loading from '../components/Loading'
 import Carousel from '../components/Carousel'
 import Head from '../components/Head'
+import bannerStyles from '../styles/components/banner.css'
+import withStyle from '../lib/WithStyle'
 
 class Home extends React.Component {
 
@@ -33,7 +35,8 @@ class Home extends React.Component {
     return (
 
       <div>
-        <Head title={"Opa"}/>
+        { withStyle(bannerStyles) }
+        <Head title={"Home react project"}/>
         <Carousel>
             {
                 this.props.banners.map((banner, k) =>
