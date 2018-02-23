@@ -9,6 +9,7 @@ import { mainFetch } from '../actions/commonActions'
 
 import { translate } from 'react-i18next';
 import i18n from '../i18n';
+import {setBasePath} from '../lib/BasePath';
 
 const components  = {
 	"post" : Article,
@@ -30,12 +31,16 @@ const getComponent = (path = "") => {
 
 class root extends React.Component {
 
-	
-
 	render() {
 		
+		if (this.props.url.query.lng) {
+			setBasePath(`/${this.props.url.query.lng}/`);
+		} else {
+			setBasePath(`/en/`);
+		}
+
 		const TagName = getComponent(this.props.url.asPath);
-		
+
 		return (
 			<div>
 				<h1>{this.props.t('hello')}</h1>
@@ -52,7 +57,7 @@ const Extended = translate(['common'], { i18n, wait: process.browser })(root);
 // Passing down initial translations
 // use req.i18n instance on serverside to avoid overlapping requests set the language wrong
 Extended.getInitialProps = async (props) => {
-	console.log(getComponent(props.asPath));
+	//basePathClass.setBasePath(`/pt/`)
   await getComponent(props.asPath).getInitialProps(props.store, props.isServer, props.pathname, props.query);
   await mainFetch(props.store.dispatch)
   if (props.req && !process.browser) return i18n.getInitialProps(props.req, ['common']);

@@ -13,12 +13,6 @@ import withStyle from '../lib/WithStyle'
 
 class Home extends React.Component {
 
-  /*componentDidMount(){
-    const { dispatch } = this.props
-    fetchHomeArticle(store.dispatch)
-    fetchBanner(store.dispatch)
-  }*/
-
   static async getInitialProps(store, isServer, pathname, query){
 
     await fetchHomeArticle(store.dispatch)
@@ -31,12 +25,13 @@ class Home extends React.Component {
   }
 
   render(){
+    
     if (!(this.props.articles) || this.props.articles.length === 0) {
       return <Loading/>
     }
 
     const data = this.props.articles
-
+    
     return (
 
       <div>

@@ -1,11 +1,12 @@
 import React from 'react';
+import { getBasePath } from '../lib/BasePath';
 
 const ArticleItem = ({ article }) => {
 
     return (
       <div>
         <div className="post-preview">
-          <a href={"post/" + article.entityId}>
+          <a href={getBasePath() + "post/" + article.entityId}>
             <h2 className="post-title">
               {article.entityLabel}
             </h2>

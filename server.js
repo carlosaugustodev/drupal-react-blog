@@ -28,7 +28,10 @@ i18n
     backend: {
       loadPath: __dirname + '/src/locales/{{lng}}/{{ns}}.json',
       addPath: __dirname + '/src/locales/{{lng}}/{{ns}}.missing.json'
-    }
+    },
+  detection: {
+      order: ['path', 'session', 'querystring', 'cookie', 'header']
+  }
   }, () => {
     app.prepare().then(() => {
 
@@ -43,6 +46,8 @@ i18n
       server.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18n));
 
       server.get('*', (req, res) => {
+        console.log(req.query)
+        //req.i18n.changeLanguage('en');
         const parsedUrl = parse(req.url, true)
         const {pathname, query} = parsedUrl
         handle(req, res, parsedUrl)
