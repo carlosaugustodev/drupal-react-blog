@@ -1,10 +1,8 @@
 import React from 'react';
-import style from '../styles/components/loading.css'
-import withStyle from '../lib/WithStyle'
+import style from '../styles/components/loading.scss'
 
 const Loading = () =>
   <div>
-    { withStyle(style) }
     <div className="loader"></div>
   </div>
 

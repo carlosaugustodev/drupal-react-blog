@@ -10,6 +10,7 @@ import { mainFetch } from '../actions/commonActions'
 import { translate } from 'react-i18next';
 import i18n from '../i18n';
 import {setBasePath} from '../lib/BasePath';
+import '../styles/general.scss'
 
 const components  = {
 	"post" : Article,
@@ -43,7 +44,7 @@ class root extends React.Component {
 
 		return (
 			<div>
-				<h1>{this.props.t('hello')}</h1>
+				<h1 className="test-carlos">{this.props.t('hello')}</h1>
 				<Main>
 					<TagName />
 				</Main>

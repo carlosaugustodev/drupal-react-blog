@@ -4,7 +4,7 @@ import NextHead from 'next/head'
 const WithStyle = (stylesheet) => {
   return (
     <NextHead>
-      <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+      
     </NextHead>
   )
 }

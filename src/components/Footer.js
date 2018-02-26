@@ -1,12 +1,10 @@
 import React from 'react';
 import Parser from 'html-react-parser';
-import style from '../styles/components/footer.css'
-import withStyle from '../lib/WithStyle'
+import style from '../styles/components/footer.scss'
 
 const Footer = (props) =>
 
 <footer>
-  { withStyle(style) }
   <hr/>
   <div className="container">
     <div className="row">

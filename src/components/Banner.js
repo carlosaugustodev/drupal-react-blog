@@ -1,6 +1,7 @@
 import React from 'react'
 import Loading from './Loading'
 import Parser from 'html-react-parser'
+import bannerStyles from '../styles/components/banner.scss'
 
 const Banner = ({banner}) => {
 

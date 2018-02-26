@@ -7,14 +7,27 @@ const glob = require('glob');
 
 
 module.exports = {
-    webpack: (config) => {
-        config.module.rules.push(
+    webpack: (config, options) => {
+        const { dev, isServer } = options
 
-            {
-                test: /\.css$/,
-                use: ['babel-loader', 'raw-loader', 'postcss-loader']
-            }
-        );
+        if (!isServer) {
+            config.module.rules.push(
+
+                {
+                    test: /\.scss$/,
+                    use: ['style-loader','css-loader', 'sass-loader']
+                }
+            );    
+        } else {
+            config.module.rules.push(
+
+                {
+                    test: /\.scss$/,
+                    use: ['css-loader', 'sass-loader']
+                }
+            );   
+        }
+        
         return config;
     },
     distDir: '../build'

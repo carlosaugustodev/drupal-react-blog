@@ -1,6 +1,5 @@
 import React from 'react';
-import style from '../styles/components/menu.css'
-import withStyle from '../lib/WithStyle'
+import '../styles/components/menu.scss'
 import { getBasePath } from '../lib/BasePath';
 
 const Menu = ({landingPages}) => {
