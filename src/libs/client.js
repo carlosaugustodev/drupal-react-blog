@@ -16,7 +16,7 @@ export const setApolloClient = () => {
 
 	const Lng_url = URL.replace("[lng_path]", getBasePath());
 	const httpLink = new HttpLink({ uri: Lng_url, fetch: fetch })
-	console.log(Lng_url)
+
 	client = new ApolloClient({
 	  link: httpLink,
 	  cache: new InMemoryCache()

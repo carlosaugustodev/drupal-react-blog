@@ -41,7 +41,7 @@ class root extends React.Component {
 
 		if (this.props.url.query.lng) {
 			const lngPath = `${this.props.url.query.lng}`
-			setLanguage(lngPath ? lngPath: 'en')
+			setLanguage(lngPath && lngPath !== "" ? lngPath: 'en')
 			setApolloClient();
 			setBasePath(lngPath);
 		} 
@@ -68,10 +68,19 @@ const Extended = translate(['common'], { i18n, wait: process.browser })(root);
 // Passing down initial translations
 // use req.i18n instance on serverside to avoid overlapping requests set the language wrong
 Extended.getInitialProps = async (props) => {
-	// console.log()
+	console.log("1")
+	console.log(props.req)
+	console.log("2")
+	
+
+	if (!props.req.baseUrl && props.req.originalUrl === "/") {
+		props.res.redirect('/en/')
+		return 
+	}
 
 	setLanguage(props.req.lng ? props.req.lng : 'en')
 	setApolloClient();
+
 	//basePathClass.setBasePath(`/pt/`)
 	
 	const languages = [
