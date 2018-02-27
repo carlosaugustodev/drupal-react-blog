@@ -3,7 +3,7 @@ import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { URL } from '../constants'
 import fetch from 'node-fetch';
-import { getBasePath } from '../libs/BasePath'
+import { getBasePath } from './basePath'
 
 
 

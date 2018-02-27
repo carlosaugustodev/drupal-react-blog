@@ -46,7 +46,6 @@ i18n
       server.post('/locales/add/:lng/:ns', i18nextMiddleware.missingKeyHandler(i18n));
 
       server.get('*', (req, res) => {
-        console.log(req.query)
         //req.i18n.changeLanguage('en');
         const parsedUrl = parse(req.url, true)
         const {pathname, query} = parsedUrl

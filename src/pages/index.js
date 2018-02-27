@@ -1,5 +1,4 @@
 import React  from 'react';
-import {compose} from 'redux';
 import Main from '../container/Main';
 import Home from '../container/Home';
 import Article from '../container/Article';
@@ -11,7 +10,7 @@ import { translate } from 'react-i18next';
 import i18n from '../libs/i18n';
 import { setLanguage } from '../libs/language';
 import { setApolloClient } from '../libs/client.js'
-import {setBasePath} from '../libs/BasePath';
+import {setBasePath} from '../libs/basePath';
 import '../styles/general.scss'
 import { initialize, addTranslationForLanguage,setActiveLanguage } from 'react-localize-redux';
 import commonPt from '../locales/pt/common.json'

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/components/menu.scss'
-import { getBasePath } from '../libs/BasePath';
+import { getBasePath } from '../libs/basePath';
 import { getLanguage } from '../libs/language';
 import { getTranslate } from 'react-localize-redux';
 import { connect } from 'react-redux';
