@@ -4,7 +4,7 @@ import { getBasePath } from '../libs/basePath';
 
 const Header = ({landingPages}) =>
 
-  <div >
+  <header className="header">
     <nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div className="container">
         <a className="navbar-brand" href={getBasePath()}>Start Bootstrap</a>
@@ -17,6 +17,6 @@ const Header = ({landingPages}) =>
 
       </div>
     </nav>
-  </div>
+  </header>
 
 export default Header;

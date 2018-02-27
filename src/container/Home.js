@@ -13,8 +13,7 @@ import Head from '../components/Head'
 
 class Home extends React.Component {
 
-  static async getInitialProps(store, isServer, pathname, query){
-
+  static async getInitialProps(store){
     await fetchHomeArticle(store.dispatch)
     await fetchBanner(store.dispatch)
   }
@@ -25,29 +24,20 @@ class Home extends React.Component {
   }
 
   render(){
-    
-    if (!(this.props.articles) || this.props.articles.length === 0) {
-      return <Loading/>
-    }
 
-    const data = this.props.articles
-    
     return (
-
       <div>
         <Head title={"Home react project"}/>
         <Carousel>
             {
-                this.props.banners.map((banner, k) =>
+              this.props.banners ? this.props.banners.map((banner, k) =>
                     <div key={k}><Banner banner={banner.entityTranslation} /></div>
-                )
+                ) : ''
             }
         </Carousel>
 
-        { !data.loading ?
-            <ArticleList articles={data} loadMoreFunction={this.loadMoreHandle} showLoadMore={this.props.showLoadMore} ></ArticleList>
-            : <Loading/>
-        }
+        <ArticleList articles={this.props.articles} loadMoreFunction={this.loadMoreHandle} showLoadMore={this.props.showLoadMore} ></ArticleList>
+
       </div>
     )
   }

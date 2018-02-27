@@ -7,10 +7,6 @@ const Masthead = ({title, subtitle, author, created, imageUrl}) => {
 
   }
 
-  if (!title) {
-    return <Loading/>
-  }
-
   return (
     <header className="masthead" style={style}>
       <div className="overlay"></div>

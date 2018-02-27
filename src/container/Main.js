@@ -5,7 +5,8 @@ import { fetchLandingPages } from "../actions/menuActions"
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import style from '../styles/general.scss'
+import Loading from '../components/Loading'
+import '../styles/general.scss'
 
 class Main extends Component {
 
@@ -16,11 +17,15 @@ class Main extends Component {
   }
 
   render() {
+     if(this.props.loading) {
+      return <Loading/>
+     }
+
     return (
 
 	    <div>
 		    <Header landingPages={this.props.landingPages}></Header>
-		    {this.props.children}
+		      {this.props.children}
 		    <Footer {...this.props.footer}></Footer>
 	    </div>
 
@@ -31,7 +36,8 @@ class Main extends Component {
 const mapStateToProps = (state) => {
   return ({
     footer : state.FooterReducers.footer,
-    landingPages: state.MenuReducers.landingPages
+    landingPages: state.MenuReducers.landingPages,
+    loading: state.CommonReducers.loading
   })
 };
 
