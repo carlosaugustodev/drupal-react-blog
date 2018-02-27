@@ -40,7 +40,7 @@ class root extends React.Component {
 	startRootComponent() {
 
 		if (this.props.url.query.lng) {
-			const lngPath = `/${this.props.url.query.lng}/`
+			const lngPath = `${this.props.url.query.lng}`
 			setLanguage(lngPath ? lngPath: 'en')
 			setApolloClient();
 			setBasePath(lngPath);
