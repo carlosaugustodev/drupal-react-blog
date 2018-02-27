@@ -19,7 +19,7 @@ const Banner = ({banner}) => {
                   <div className="post-heading">
                     <h1>{banner.entityLabel}</h1>
                     <h2 className="subheading">{Parser((banner.fieldSubtitle) ? banner.fieldSubtitle.value : '')}</h2>
-                    <a className="btn btn-primary"  href={banner.fieldCallToAction ? banner.fieldCallToAction.uri : ''}>{banner.fieldCallToAction ? banner.fieldCallToAction.title : ''}</a>
+                    <a className="btn btn-primary"  href={banner.fieldCallToAction ? banner.fieldCallToAction.url.alias : ''}>{banner.fieldCallToAction ? banner.fieldCallToAction.title : ''}</a>
                   </div>
                 </div>
               </div>
