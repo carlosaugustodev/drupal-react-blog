@@ -68,10 +68,6 @@ const Extended = translate(['common'], { i18n, wait: process.browser })(root);
 // Passing down initial translations
 // use req.i18n instance on serverside to avoid overlapping requests set the language wrong
 Extended.getInitialProps = async (props) => {
-	console.log("1")
-	console.log(props.req)
-	console.log("2")
-	
 
 	if (!props.req.baseUrl && props.req.originalUrl === "/") {
 		props.res.writeHead(302, {
