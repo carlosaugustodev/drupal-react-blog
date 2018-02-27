@@ -26,10 +26,10 @@ const getComponent = (path = "") => {
 	//Default component
 	let component = Home
 
-  Object.keys(components).map((key) => {
-    if (path.indexOf(key) !== -1) {
-      component = components[key]
-    }
+  	Object.keys(components).map((key) => {
+	    if (path.indexOf(key) !== -1) {
+	      component = components[key]
+	    }
 	});
 
 	return component

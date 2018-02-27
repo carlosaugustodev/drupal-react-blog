@@ -1,7 +1,9 @@
 import React from 'react';
 import ArticleItem from './ArticleItem'
+import { connect } from 'react-redux';
+import { getTranslate } from 'react-localize-redux';
 
-const ArticleList = ({ articles,loadMoreFunction, showLoadMore}) => {
+const ArticleList = ({ articles,loadMoreFunction, showLoadMore, t}) => {
 
   return (
     <div className="container">
@@ -15,8 +17,7 @@ const ArticleList = ({ articles,loadMoreFunction, showLoadMore}) => {
             })
           }
           <div className="clearfix">
-            { showLoadMore ? <a className="btn btn-primary float-right" onClick={() => loadMoreFunction()}>Older
-              Posts &rarr;</a> : '' }
+            { showLoadMore ? <a className="btn btn-primary float-right" onClick={() => loadMoreFunction()}>{t('Older Posts')} &rarr;</a> : '' }
           </div>
         </div>
       </div>
@@ -24,4 +25,10 @@ const ArticleList = ({ articles,loadMoreFunction, showLoadMore}) => {
   )
 }
 
-export default ArticleList
+const mapStateToProps = (state) => {
+  return ({
+    t: getTranslate(state.locale),
+  })
+};
+
+export default connect(mapStateToProps)(ArticleList);
