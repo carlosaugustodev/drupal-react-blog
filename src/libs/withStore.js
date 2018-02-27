@@ -1,5 +1,5 @@
 import { createStore } from 'redux'
-import reducer from "../src/reducers/reducers"
+import reducer from "../reducers/reducers"
 import withRedux from "next-redux-wrapper";
 
 let store = createStore(reducer)

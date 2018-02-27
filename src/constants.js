@@ -1,5 +1,5 @@
 // URL Path
-export const URL = 'http://decoup2.dd:8083/graphql';
+export const URL = 'http://decoup2.dd:8083[lng_path]graphql';
 
 // Actions
 export const HOME_ARTICLES_ACTION = 'HOME_ARTICLES';

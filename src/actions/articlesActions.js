@@ -1,8 +1,9 @@
-import client from '../client.js'
+import { getApolloClient } from '../libs/client.js'
 import gql from 'graphql-tag';
-import singleGql from '../queries/single-article.js'
-import articlesHomeGql from '../queries/home-articles.js'
+import singleGql from '../queries/single-article.gql'
+import articlesHomeGql from '../queries/home-articles.gql'
 import * as CONST from '../constants.js'
+import { getLangCode } from '../libs/language'
 
 
 export const homeArticlesReceive = (articles, page = 1, showLoadMore) => {
@@ -23,7 +24,7 @@ export const singleArticleReceive = (article) => {
 
 export const fetchSingleArticle = (dispatch, id) => {
   return (async () => {
-    const result = await client.query({query : gql(singleGql(id))});
+    const result = await getApolloClient().query({query : gql(singleGql(id))});
     return dispatch(singleArticleReceive(result.data.nodeById))
   })()
 }
@@ -34,7 +35,7 @@ export const fetchHomeArticle = (dispatch, page) => {
 
   return (async () => {
       
-    const result = await client.query({query : gql(articlesHomeGql(limit))});
+    const result = await getApolloClient().query({query : gql(articlesHomeGql(getLangCode(), limit))});
     const showLoadMore = limit < result.data.nodeQuery.count ? true : false;
 
     return dispatch(homeArticlesReceive(result.data.nodeQuery.entities, limit, showLoadMore))

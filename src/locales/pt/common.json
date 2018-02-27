@@ -1,3 +1,8 @@
 {
-  "hello": "Olá mundo!"
+  "hello": "Olá mundo!",
+  "Languages": "Linguagens",
+  "English": "Inglês",
+  "Portuguese": "Português",
+  "Landing pages": "Páginas",
+  "About": "Sobre"
 }

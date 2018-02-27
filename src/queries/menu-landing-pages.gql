@@ -1,0 +1,17 @@
+export default (name) => {
+	return `
+		query menuQuery {
+		  menuByName(name : "${name}") {
+		    links {
+		      label,
+		      url {
+		        alias,
+		        path
+		      }
+		    }
+		  }
+		}
+	`
+}
+
+

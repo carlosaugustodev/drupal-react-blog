@@ -10,7 +10,7 @@ const ArticleList = ({ articles,loadMoreFunction, showLoadMore}) => {
           {
             articles.map((article, k) => {
               return (
-                <ArticleItem article={article} key={k}></ArticleItem>
+                <ArticleItem article={article.entityTranslation} key={k}></ArticleItem>
               )
             })
           }

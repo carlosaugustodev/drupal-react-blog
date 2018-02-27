@@ -1,6 +1,6 @@
-import client from '../client.js'
+import { getApolloClient } from '../libs/client.js'
 import gql from 'graphql-tag';
-import landingPageBypathGql from '../queries/page-by-path.js'
+import landingPageBypathGql from '../queries/page-by-path.gql'
 import * as CONST from '../constants.js'
 
 export const pageByPathReceive = (page) => {
@@ -13,7 +13,7 @@ export const pageByPathReceive = (page) => {
 export const fetchPageByPath = (dispatch, path) => {
 
   return (async () => {
-    const result = await client.query({query : gql(landingPageBypathGql(path))});
+    const result = await getApolloClient().query({query : gql(landingPageBypathGql(path))});
     return dispatch(pageByPathReceive(result.data.route.nodeContext))
   })()
 }

@@ -1,30 +1,44 @@
 import React from 'react';
 import '../styles/components/menu.scss'
-import { getBasePath } from '../lib/BasePath';
+import { getBasePath } from '../libs/BasePath';
+import { getLanguage } from '../libs/language';
+import { getTranslate } from 'react-localize-redux';
+import { connect } from 'react-redux';
 
-const Menu = ({landingPages}) => {
+const Menu = ({landingPages, t, context}) => {
 
-  if (!landingPages) {
-    return ''
+  const about = {
+    "pt" : "pages/sobre",
+    "en" : "pages/about-0"
   }
-
+  
   return (
     <div>
       <div className="collapse navbar-collapse" id="navbarResponsive">
         <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <a className="nav-link" href={getBasePath()}>Home</a>
+          <li className="dropdown nav-item">
+            <a href="#" className="dropdown-toggle" data-toggle="dropdown">{t("Languages")} <b className="caret"></b></a>
+            <ul className="dropdown-menu">
+              <li className="nav-item">
+                <a className="nav-link" href='/en/'>{t("English")}</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href='/pt/'>{t("Portuguese")}</a>
+              </li>
+            </ul>
           </li>
+    
           <li className="nav-item">
-            <a className="nav-link" href={getBasePath() + "pages/about"}>About</a>
+            <a className="nav-link" href={getBasePath() + about[getLanguage()]}>{t("About")}</a>
           </li>
           <li className="dropdown nav-item">
-            <a href="#" className="dropdown-toggle" data-toggle="dropdown">Dropdown <b className="caret"></b></a>
+            <a href="#" className="dropdown-toggle" data-toggle="dropdown">{t("Landing pages")} <b className="caret"></b></a>
             <ul className="dropdown-menu">
-              {
+              { landingPages ? 
                 landingPages.map((link, k) => {
-                  return (<li key={k} className="nav-item"><a href={getBasePath() + link.url.alias.substring(1, link.url.alias.length)}>{link.label}</a></li>)
+                  return (<li key={k} className="nav-item"><a href={"/" + link.url.alias.substring(1, link.url.alias.length)}>{link.label}</a></li>)
                 })
+                : ""
               }
             </ul>
           </li>
@@ -35,4 +49,14 @@ const Menu = ({landingPages}) => {
   )
 }
 
-export default Menu;
+const mapStateToProps = (state) => {
+  return ({
+    t: getTranslate(state.locale),
+    banners : state.BannerReducers.banner,
+    articles : state.ArticleReducers.articles,
+    page: state.ArticleReducers.page,
+    showLoadMore: state.ArticleReducers.showLoadMore
+  })
+};
+
+export default connect(mapStateToProps)(Menu);

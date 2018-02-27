@@ -1,6 +1,9 @@
+
+
 const i18n = require('i18next');
 const XHR = require('i18next-xhr-backend');
 const LanguageDetector = require('i18next-browser-languagedetector');
+
 
 const options = {
   fallbackLng: 'en',
@@ -48,6 +51,7 @@ i18n.getInitialProps = (req, namespaces) => {
       initialI18nStore[l][ns] = req.i18n.services.resourceStore.data[l] ? req.i18n.services.resourceStore.data[l][ns] || {} : {};
     });
   });
+  //translate.setI18n(req.i18n);
 
   return {
     i18n: req.i18n, // use the instance on req - fixed language on request (avoid issues in race conditions with lngs of different users)

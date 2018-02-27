@@ -15,7 +15,11 @@ module.exports = {
 
                 {
                     test: /\.scss$/,
-                    use: ['style-loader','css-loader', 'sass-loader']
+                    include: [
+                        path.resolve(__dirname, 'node_modules'),
+                        path.resolve(__dirname, 'styles')
+                    ],
+                    use: ['style-loader','postcss-loader', 'sass-loader']
                 }
             );    
         } else {
@@ -23,9 +27,9 @@ module.exports = {
 
                 {
                     test: /\.scss$/,
-                    use: ['css-loader', 'sass-loader']
+                    use: ['null-loader']
                 }
-            );   
+            );
         }
         
         return config;

@@ -1,6 +1,6 @@
-import client from '../client.js'
+import { getApolloClient } from '../libs/client.js'
 import gql from 'graphql-tag';
-import footerGql from '../queries/footer.js'
+import footerGql from '../queries/footer.gql'
 import * as CONST from '../constants.js'
 
 export const footerReceive = (footer) => {
@@ -11,7 +11,7 @@ export const footerReceive = (footer) => {
 }
 
 export const fetchFooter = (dispatch) => {
-  client.query({query : gql(footerGql())}).then(result => {
+  getApolloClient().query({query : gql(footerGql())}).then(result => {
     return dispatch(footerReceive(result.data.blockContentById))
   })
 }

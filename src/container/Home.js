@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchHomeArticle } from '../actions/articlesActions'
 import { fetchBanner } from '../actions/bannerActions'
+import { getTranslate, getActiveLanguage } from 'react-localize-redux';
 
 import ArticleList from '../components/ArticleList'
 import Banner from '../components/Banner'
@@ -34,12 +35,11 @@ class Home extends React.Component {
     return (
 
       <div>
-        
         <Head title={"Home react project"}/>
         <Carousel>
             {
                 this.props.banners.map((banner, k) =>
-                    <div key={k}><Banner banner={banner} /></div>
+                    <div key={k}><Banner banner={banner.entityTranslation} /></div>
                 )
             }
         </Carousel>
@@ -55,6 +55,7 @@ class Home extends React.Component {
 
 const mapStateToProps = (state) => {
   return ({
+    t: getTranslate(state.locale),
     banners : state.BannerReducers.banner,
     articles : state.ArticleReducers.articles,
     page: state.ArticleReducers.page,

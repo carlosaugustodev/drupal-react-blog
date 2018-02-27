@@ -1,5 +1,5 @@
 import React from 'react';
-import { getBasePath } from '../lib/BasePath';
+import { getBasePath } from '../libs/BasePath';
 
 const ArticleItem = ({ article }) => {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Menu from './Menu';
-import { getBasePath } from '../lib/BasePath';
+import { getBasePath } from '../libs/BasePath';
 
 const Header = ({landingPages}) =>
 

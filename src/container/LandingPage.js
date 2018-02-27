@@ -29,7 +29,7 @@ class LandingPage extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
+
   const article = (state.PageReducers.page) ? state.PageReducers.page : {};
   return ({
     page : article,

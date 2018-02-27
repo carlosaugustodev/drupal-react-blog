@@ -13,7 +13,7 @@ const handle = routes.getRequestHandler(app)
 const express = require('express')
 const i18nextMiddleware = require('i18next-express-middleware');
 const Backend = require('i18next-node-fs-backend');
-const i18n = require('./src/i18n');
+const i18n = require('./src/libs/i18n');
 
 
 // init i18next with serverside settings

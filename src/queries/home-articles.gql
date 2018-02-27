@@ -1,0 +1,37 @@
+export default (lng,limit) => {
+  return `
+    query articleQuery {
+      nodeQuery (
+        filter:{
+           conjunction: AND
+            conditions: [{
+              field: "type"
+              value: ["article"]
+           },
+           {
+              field: "langcode"
+              value: ["${lng}"]
+            }]
+        },
+        sort: [{field: "changed", direction: DESC}], limit: ${limit}
+      ) {
+        count,
+        entities {
+          entityTranslation(language: "${lng}") {
+            entityId,
+            entityLabel,
+            ... on NodeArticle {
+              body {
+                summary
+              },
+            },
+            entityOwner {
+              entityLabel
+            },
+            entityCreated
+          }
+        }
+      }
+    }
+  `
+}
