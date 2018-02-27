@@ -74,14 +74,15 @@ Extended.getInitialProps = async (props) => {
 	
 
 	if (!props.req.baseUrl && props.req.originalUrl === "/") {
-		props.res.redirect('/en/')
+		props.res.writeHead(302, {
+        	Location: '/en/'
+      	})
+      	props.res.end()
 		return 
 	}
 
 	setLanguage(props.req.lng ? props.req.lng : 'en')
 	setApolloClient();
-
-	//basePathClass.setBasePath(`/pt/`)
 	
 	const languages = [
 	  { name: 'English', code: 'en' },
