@@ -4,6 +4,7 @@ import FooterReducers from './footerReducers'
 import MenuReducers from './menuReducers'
 import PageReducers from './pageReducers'
 import BannerReducers from './bannerReducers'
+import CommonReducers from './commonReducers'
 import { localeReducer as locale } from 'react-localize-redux';
 
 const reducer = combineReducers({
@@ -12,6 +13,7 @@ const reducer = combineReducers({
   MenuReducers,
   PageReducers,
   BannerReducers,
+  CommonReducers,
   locale
 })
 
