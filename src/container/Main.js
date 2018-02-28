@@ -17,19 +17,14 @@ class Main extends Component {
   }
 
   render() {
-     if(this.props.loading) {
-      return <Loading/>
-     }
-
-    return (
-
-	    <div>
-		    <Header landingPages={this.props.landingPages}></Header>
-		      {this.props.children}
-		    <Footer {...this.props.footer}></Footer>
-	    </div>
-
-    )
+     return (
+       <div>
+         { this.props.loading ? <Loading/> : ''}
+         <Header landingPages={this.props.landingPages}></Header>
+         {this.props.children}
+         <Footer {...this.props.footer}></Footer>
+       </div>
+     )
   }
 }
 

@@ -21,6 +21,7 @@ export default class MyDocument extends Document {
 
           <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
           <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+          <link href="/static/css/styles.css" rel="stylesheet" />
 
         </Head>
 
